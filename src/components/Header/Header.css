@@ -12,7 +12,6 @@
 }
 
 .other-buttons {
-  height: 0;
   font-size: 26px;
   font-family: sans-serif;
   width: auto;
@@ -33,7 +32,7 @@
 .dropdown {
   position: relative;
   display: flex;
-  height: 0
+  height: 10px;
 }
 
 .dropdown-content {

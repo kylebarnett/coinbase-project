@@ -1,7 +1,8 @@
 CREATE TABLE users(
   id serial primary key,
   username varchar(20),
-  password varchar(20)
+  password varchar(20),
+  email varchar(30)
 );
 
 CREATE TABLE cart(
@@ -9,7 +10,7 @@ CREATE TABLE cart(
   product varchar(20),
   price integer,
   quantity integer,
-  users_id references users(id)
+  user_id references users(id)
 );
 
 CREATE TABLE orders(
@@ -18,5 +19,5 @@ CREATE TABLE orders(
   price integer,
   quantity integer,
   order_time timestamp,
-  users_id references users(id)
+  user_id references users(id)
 );
