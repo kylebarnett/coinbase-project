@@ -1,0 +1,16 @@
+.header-container {
+  height: 500px;
+  width: 100%;
+  background-color: rgb(15, 98, 189);
+  display: flex;
+  justify-content: space-between;
+}
+
+.coinbase-logo {
+  height: 10%;
+  width: 20%;
+  font-size: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

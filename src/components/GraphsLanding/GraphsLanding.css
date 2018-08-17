@@ -1,0 +1,76 @@
+.main-coin-box {
+  display: flex;
+  /* margin-top: -50px; */
+  width: 100%;
+  flex-direction: row;
+  justify-content: space-between;
+  align-content: center;
+  /* margin-left: 300px;
+  margin-right: 100px; */
+}
+
+.bitcoin-box {
+  background-color: white;
+  margin-top: -125px;
+  border-radius: 5px;
+  border: 1px solid #DCDCDC;
+  box-shadow: 0 1px 2px 0 #e1e5ea;
+}
+
+.bitcoin-name {
+  margin-left: 35px;
+}
+
+.buy-bitcoin-button {
+  
+}
+
+.buy-bitcoin-button:hover {
+  position: relative;
+  top: 0;
+  left: 0;
+  background-color: black
+}
+
+.bitcoin-cash-box {
+  background-color: white;
+  margin-top: -125px;
+  border-radius: 5px;
+  border: 1px solid #DCDCDC;
+  box-shadow: 0 1px 2px 0 #e1e5ea;
+}
+
+.bitcoin-cash-name {
+  margin-left: 35px;
+}
+
+.ethereum-box {
+  background-color: white;
+  margin-top: -125px;
+  border-radius: 5px;
+  border: 1px solid #DCDCDC;
+  box-shadow: 0 1px 2px 0 #e1e5ea;
+}
+
+.ethereum-name {
+  margin-left: 35px;
+}
+
+.litecoin-box {
+  background-color: white;
+  margin-top: -125px;
+  border-radius: 5px;
+  border: 1px solid #DCDCDC;
+  box-shadow: 0 1px 2px 0 #e1e5ea;
+}
+
+.litecoin-name {
+  margin-left: 35px;
+}
+
+.graphs-container {
+  /* height: 100px; */
+  /* width: 300px; */
+  display: flex; 
+  flex-direction: row;
+}

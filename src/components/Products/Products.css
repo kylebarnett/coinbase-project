@@ -1,0 +1,6 @@
+.header-container {
+  background-color: rgb(15, 98, 189);
+  height: 500px;
+  width: 100%;
+  display: flex;
+}

@@ -4,6 +4,7 @@ const session = require('express-session');
 const massive = require('massive');
 const controller = require('./controllers/controller');
 const AuthCtrl = require('./controllers/AuthCtrl');
+const CoinData = require('./controllers/CoinData');
 require('dotenv').config()
 
 const app = express()
@@ -23,6 +24,8 @@ app.get('/auth/callback', AuthCtrl.auth)
 app.get('/api/currentUser', (req, res) => {
   res.send(req.session.user)
 })
+
+//users
 
 app.get('/api/users', controller.getUsers)
 app.post('/api/emails', controller.newUser)

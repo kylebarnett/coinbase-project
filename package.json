@@ -6,12 +6,15 @@
   "dependencies": {
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
+    "chart.js": "^2.7.2",
     "dotenv": "^6.0.0",
     "express": "^4.16.3",
     "express-session": "^1.15.6",
     "massive": "^5.2.0",
     "react": "^16.4.2",
+    "react-chartjs-2": "^2.7.4",
     "react-dom": "^16.4.2",
+    "react-number-format": "^3.5.1",
     "react-redux": "^5.0.7",
     "react-router-dom": "^4.3.1",
     "react-scripts": "1.1.4",
@@ -32,7 +35,10 @@
   "license": "ISC",
   "nodemonConfig": {
     "ext": "js,sql",
-    "ignore": ["src/*", "public/*"]
+    "ignore": [
+      "src/*",
+      "public/*"
+    ]
   },
   "proxy": {
     "/auth/callback": {
