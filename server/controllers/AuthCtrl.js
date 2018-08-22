@@ -25,6 +25,15 @@ module.exports = {
     let email = await db.getUserByEmail(userInfo.email)
     if(users.length){
       req.session.user = users[0]
+      // this is for if the user wants to buy currency without being logged in
+      // switch (req.query.currency) {
+      //   case 'bitcoin':
+      //     return res.redirect('/#/bitcoin')
+      //   case 'ethereum':
+      //     return res.redirect('/#/ethereum')
+      //   default:
+      //     return res.redirect('/');
+      // }
       res.redirect('/')
     } else if (email.length){
       let something = await db.updateUser([email[0].id, userInfo])

@@ -1,0 +1,23 @@
+.main-container {
+  display: flex;
+  width: 100vw;
+}
+
+
+.features-container {
+  display: flex;
+  flex-direction: column;
+}
+
+/* .manage-your-porfolio-paragraph {
+  display: inline-flex;
+} */
+
+.coinbase-product {
+  display: flex;
+}
+
+.example {
+  height: 400px;
+  width: 450px;
+}

@@ -21,16 +21,16 @@
   margin-left: 35px;
 }
 
-.buy-bitcoin-button {
-  
-}
+/* .buy-bitcoin-button {
+  display: none;
+} */
 
-.buy-bitcoin-button:hover {
+/* .buy-bitcoin-button:hover {
   position: relative;
   top: 0;
   left: 0;
-  background-color: black
-}
+  background-color: green
+} */
 
 .bitcoin-cash-box {
   background-color: white;
