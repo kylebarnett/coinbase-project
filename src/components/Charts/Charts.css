@@ -1,7 +1,13 @@
-.header-container {
+.main-header {
   height: 500px;
   width: 100%;
   background-color: rgb(15, 98, 189);
+  display: flex;
+  justify-content: space-between;
+}
+
+.main-header-navbar {
+  height: 20%;
   display: flex;
   justify-content: space-between;
 }
@@ -13,4 +19,14 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-top: 10px;
+}
+
+.all-charts {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 80%;
+  height: 80%;
 }

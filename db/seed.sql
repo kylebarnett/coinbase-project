@@ -21,3 +21,8 @@ CREATE TABLE orders(
   order_time timestamp,
   user_id references users(id)
 );
+
+
+-- orders: 
+--step 1 is select sum(price) from cart where user_id = $1 and active=true
+--step 3 insert into orders \

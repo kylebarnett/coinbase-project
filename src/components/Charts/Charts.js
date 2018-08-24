@@ -10,7 +10,7 @@ import { Line } from 'react-chartjs-2';
 //   }]
 // }
 
-let bitcoinData = [7321.04, 7370.78, 7466.86, 7354.13, 7419.29, 7418.49, 7711.11, 8424.27, 8181.39, 7951.58, 8165.01, 8192.15, 8218.46, 8180.48, 7780.44, 7624.91, 7567.15, 7434.39, 7032.85, 7068.48, 6951.80, 6753.12, 6305.80, 6568.23, 6184.71, 6295.73, 6322.69, 6297.57, 6199.71, 6308.52 ]
+let bitcoinData = [7321.04, 7370.78, 7466.86, 7354.13, 7419.29, 7418.49, 7711.11, 8424.27, 8181.39, 7951.58, 8165.01, 8192.15, 8218.46, 8180.48, 7780.44, 7624.91, 7567.15, 7434.39, 7032.85, 7068.48, 6951.80, 6753.12, 6305.80, 6568.23, 6184.71, 6295.73, 6322.69, 6297.57, 6199.71, 6308.52]
 
 const data = {
   labels: ['07-17-18', '07-18-18', '07-19-18', '07-20-18', '07-21-18', '07-22-18', '07-23-18', '07-24-18', '07-25-18', '07-26-18', '07-27-18', '07-28-18', '07-29-18', '07-30-18', '07-31-18', '08-01-18', '08-02-18', '08-03-18', '08-04-18', '08-05-18', '08-06-18', '08-07-18', '08-08-18', '08-09-18', '08-10-18', '08-11-18', '08-12-18', '08-13-18', '08-14-18', '08-15-18'],
@@ -28,7 +28,7 @@ let bitcoinCashData = [850.78, 829.94, 824.89, 767.66, 789.49, 788.67, 784.39, 8
 const data2 = {
   labels: ['07-17-18', '07-18-18', '07-19-18', '07-20-18', '07-21-18', '07-22-18', '07-23-18', '07-24-18', '07-25-18', '07-26-18', '07-27-18', '07-28-18', '07-29-18', '07-30-18', '07-31-18', '08-01-18', '08-02-18', '08-03-18', '08-04-18', '08-05-18', '08-06-18', '08-07-18', '08-08-18', '08-09-18', '08-10-18', '08-11-18', '08-12-18', '08-13-18', '08-14-18', '08-15-18'],
   datasets: [
-    { 
+    {
       backgroundColor: 'rgba(226, 239, 211)',
       borderColor: 'rgba(141, 196, 81)',
       data: bitcoinCashData
@@ -67,32 +67,40 @@ class Charts extends Component {
   render() {
     return (
       <div>
-        <div className="header-container">
-          <div className="coinbase-logo">
-            <Link to="/"><h4 style={{ textDecoration: 'none', color: 'white' }}>Coinbase</h4></Link>
-          </div>
-          <div className="product-button">
-            Products
+        <div className="main-header">
+          <div className="main-header-navbar">
+            <div className="coinbase-logo">
+              <Link to="/"><h4 style={{ textDecoration: 'none', color: 'white' }}>Coinbase</h4></Link>
+            </div>
+            <div className="product-button">
+              Products
           </div>
           <div className="help-button">
-            Help
+              Help
           </div>
-          <div className="chart-button">
-            <Link to="/charts">Charts</Link>
+            <div className="chart-button">
+              <Link to="/charts">Charts</Link>
+            </div>
           </div>
         </div>
+        <div className="all-charts">
         <Line
-        data={data}
+          data={data}
+          options={{ legend: false, title: { display: true, text: 'Bitcoin'} }}
         />
         <Line
-        data={data2}
+          data={data2}
+          options={{ legend: false, title: { display: true, text: 'Bitcoin-Cash'} }}
         />
         <Line
-        data={data3}
+          data={data3}
+          options={{ legend: false, title: { display: true, text: 'Ethereum'} }}
         />
         <Line
-        data={data4}
+          data={data4}
+          options={{ legend: false, title: { display: true, text: 'Litecoin'} }}
         />
+        </div>
       </div>
     )
   }

@@ -1,0 +1,4 @@
+-- delete from cart
+-- where user_id = $1;
+-- insert into orders
+-- where user_id = $1

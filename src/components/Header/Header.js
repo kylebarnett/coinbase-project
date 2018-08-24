@@ -47,34 +47,47 @@ class Header extends Component {
     })
   }
   render() {
+    console.log(this.props.user)
     return (
       <div>
         <ToastContainer />
         <div className="main-header">
-          <div className="coinbase-logo">
-            <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Coinbase</Link>
-          </div>
-          <div className="other-buttons">
-            <Link to="/products" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Products</Link>
-            <Link to="/charts" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Charts</Link>
-            <Link to="/cart" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Cart</Link>
-          </div>
-          <div className="dropdown">
-            <button className="dropbtn">About</button>
-            <div className="dropdown-content">
-              <a href="#">About Us</a>
-              <a href="#">Support</a>
-              <a href="#">Carrers</a>
+          <div className="main-header-navbar">
+            <div className="coinbase-logo">
+              <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Coinbase</Link>
+            </div>
+            <div className="other-buttons">
+              <Link to="/products" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Products</Link>
+              <Link to="/charts" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Charts</Link>
+              <Link to="/cart" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Cart</Link>
+            </div>
+            <div className="dropdown">
+              <button className="dropbtn">About</button>
+              <div className="dropdown-content">
+                <a href="#">About Us</a>
+                <a href="#">Support</a>
+                <a href="#">Carrers</a>
+              </div>
+            </div>
+            <div className="login-button">
+              {this.props.user ? <Link to="/" onClick={this.props.logout}>Logout</Link> : <a ref="" style={{ height: '10px', textDecoration: 'none', color: 'white', }} onClick={this.login}>Login</a>}
             </div>
           </div>
-          <div className="login-button">
-            {this.props.user ? <Link to="/" onClick={this.props.logout}>Logout</Link> : <a ref="" style={{ height: '10px', textDecoration: 'none', color: 'white', }} onClick={this.login}>Login</a>}
-          </div>
-          <div className="greeting">
-            <h1 className="opening">Buy and sell digital currency</h1>
-            <p className="sub-opening">Coinbase is the easiest and most trusted place to buy, sell, and manage your digital currency.</p>
-            <input className="email-input" type="text" placeholder="Email Address" style={{ height: '10px' }} onChange={(e) => this.handleInputChange(e.target.value)}></input>
-            <button className="email-button" style={{ height: '10px' }} onClick={this.getStarted}>Get Started</button>
+          <div className="main-header-info-box">
+            
+              <div className="greeting-header-line">
+                <h1 className="opening-line">Buy and sell digital currency</h1>
+              </div>
+              <div className="sub-opening-main">
+                <p className="sub-opening">Coinbase is the easiest and most trusted place to buy, sell, and manage your digital currency.</p>
+              </div>
+              <div className="email-input-container">
+                <div className="email-input-main">
+                  <input className="email-input" type="text" placeholder="Email Address" onChange={(e) => this.handleInputChange(e.target.value)}></input></div>
+                <div className="email-main">
+                  <button className="email-button" onClick={this.getStarted}>Get Started</button></div>
+              </div>
+            
           </div>
         </div>
       </div>
@@ -83,8 +96,9 @@ class Header extends Component {
 }
 
 let mapStateToProps = state => {
+  console.log(state)
   return {
-    user: state.user
+    user: state.user.user
   }
 }
 

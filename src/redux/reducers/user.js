@@ -11,7 +11,6 @@ const GET_USER = 'GET_USER'
 const GET_USER_FULFILLED = 'GET_USER_FULFILLED'
 
 export default function reducer (state=initialState, action){
-  
   switch(action.type){
     case LOGOUT_USER_FULFILLED:
       return {

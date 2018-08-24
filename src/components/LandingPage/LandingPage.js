@@ -33,12 +33,12 @@ class LandingPage extends Component {
             <h3 className="vault-protection-header"><img src="https://www2.coinbase.com/assets/app-secure.png" alt=""/>Vault Protection</h3>
             <p className="vault-protection-paragraph">For added security, store your funds in a vault with time delayed withdrawals.</p>
           </div>
-          <div className="Mobile-apps-container">
-            <h3 className="Mobile-apps-header"><img src="https://www2.coinbase.com/assets/app-mobile.png" alt=""/>Mobile apps</h3>
-            <p className="Mobile-apps-paragraph">Stay on top of the markets with the Coinbase app for Android of iOS.</p>
+          <div className="mobile-apps-container">
+            <h3 className="mobile-apps-header"><img src="https://www2.coinbase.com/assets/app-mobile.png" alt=""/>Mobile apps</h3>
+            <p className="mobile-apps-paragraph">Stay on top of the markets with the Coinbase app for Android of iOS.</p>
           </div>
           <div className="coinbase-product">
-            <img className="example"src="https://www2.coinbase.com/assets/app-product.png" alt="" />
+            <img className="landing-picture"src="https://www2.coinbase.com/assets/app-product.png" alt="" />
           </div>
         </div>
         <LandingPage2 />

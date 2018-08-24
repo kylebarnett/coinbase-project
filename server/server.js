@@ -20,7 +20,7 @@ app.use(session({
     resave: false
 }))
 app.use(bodyParser.json());
-app.use(checkForLogin);
+// app.use(checkForLogin);
 
 
 app.get('/auth/callback', AuthCtrl.auth)
@@ -42,7 +42,9 @@ app.get('/api/logout', (req, res) => {
 
 app.post('/api/cart', cart.add)
 app.delete('/api/cart/:id', cart.remove)
+app.put('/api/cart/:id', cart.update)
 app.get('/api/cart', cart.getAll)
+app.delete('/api/checkout', cart.checkout)
 
 
 const port = 7777
