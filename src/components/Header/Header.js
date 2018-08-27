@@ -47,7 +47,6 @@ class Header extends Component {
     })
   }
   render() {
-    console.log(this.props.user)
     return (
       <div>
         <ToastContainer />
@@ -96,7 +95,6 @@ class Header extends Component {
 }
 
 let mapStateToProps = state => {
-  console.log(state)
   return {
     user: state.user.user
   }

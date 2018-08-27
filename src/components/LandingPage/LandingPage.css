@@ -13,41 +13,72 @@
   text-align: center;
 }
 
+.features-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.four-features {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  width: 45%
+}
+
 .manage-your-portfolio-header {
   color: rgb(36, 49, 66)
 }
 
+.manage-image {
+  height: 32px;
+  width: 32px;
+}
+
 .manage-your-porfolio-paragraph {
   color: lightslategray;
+  margin-left: 33px;
 }
 
 .recurring-buys-header {
   color: rgb(36, 49, 66)
 }
 
+.recurring-image {
+  height: 32px;
+  width: 32px;
+}
+
 .recurring-buys-paragraph {
   color: lightslategray;
+  margin-left: 33px;
 }
 
 .vault-protection-header {
   color: rgb(36, 49, 66)
 }
 
+.vault-image {
+  height: 32px;
+  width: 32px
+}
+
 .vault-protection-paragraph {
   color: lightslategray;
+  margin-left: 33px;
 }
 
 .mobile-apps-header {
   color: rgb(36, 49, 66)
 }
 
-.mobile-apps-paragraph {
-  color: lightslategray;
+.mobile-image {
+  height: 32px;
+  width: 32px;
 }
 
-.features-container {
-  display: flex;
-  flex-direction: column;
+.mobile-apps-paragraph {
+  color: lightslategray;
+  margin-left: 33px;
 }
 
 /* .manage-your-porfolio-paragraph {
@@ -61,4 +92,10 @@
 .landing-picture {
   height: 400px;
   width: 450px;
+}
+
+.bottom-border {
+  background-color: gainsboro;
+  height: 1px;
+  width: 100%;
 }

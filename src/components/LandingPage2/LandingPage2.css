@@ -1,0 +1,261 @@
+.main-container {
+  display: flex;
+}
+
+.header-container2 {
+  justify-content: center;
+  align-content: center;
+  margin-top: 50px;
+}
+
+.header-text {
+  color: rgb(36, 49, 66)
+}
+
+.header-paragraph {
+  color: lightslategray;
+  text-align: center;
+}
+
+/* Most Trusted Digital Currency Platform Container */
+
+.body-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.body {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-between;
+  padding: 50px;
+}
+
+.safe {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.safe-image {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: gainsboro;
+  border-width: 1px
+}
+
+.safe-header {
+  text-align: center;
+}
+
+.safe-paragraph {
+  text-align: center;
+  color: lightslategray;
+}
+
+.insurance {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.insurance-image {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: gainsboro;
+  border-width: 1px;
+}
+
+.insurance-header {
+  text-align: center;
+}
+
+.insurance-paragraph {
+  text-align: center;
+  color: lightslategray;
+}
+
+.shield {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.shield-image {
+  height: 60px;
+  width: 60px;
+  display: flex;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: gainsboro;
+  border-width: 1px;
+}
+
+.shield-header {
+  text-align: center;
+}
+
+.shield-paragraph {
+  text-align: center;
+  color: lightslategray;
+}
+
+
+/* Blue Container */
+
+
+.blue-container {
+  display: flex;
+  height: 200px;
+  width: 100%;
+  background-color: rgb(15, 98, 189);
+  justify-content: space-around;
+  align-content: center;
+}
+
+.dollar-section {
+  display: flex;
+  width: 250px;
+}
+
+.dollar-stuff {
+  justify-content: center;
+}
+
+.dollar-header {
+  color: white;
+  font-size: 45px;
+  text-align: center;
+}
+
+.dollar-paragraph {
+  color: rgb(154, 185, 221);
+  text-align: center;
+}
+
+.countries-section {
+  display: flex;
+  width: 250px;
+}
+
+.countries-stuff {
+  justify-content: center;
+} 
+
+.countries-header {
+  color: white;
+  font-size: 45px;
+  text-align: center;
+}
+
+.countries-paragraph {
+  color: rgb(154, 185, 221);
+  text-align: center;
+}
+
+.customers-section {
+  display: flex;
+  width: 250px;
+}
+
+.customers-stuff {
+  justify-content: center;
+}
+
+.customers-header {
+  color: white;
+  font-size: 45px;
+  text-align: center;
+}
+
+.customers-paragraph {
+  color: rgb(154, 185, 221);
+  text-align: center;
+}
+
+/* Get started */
+
+.get-started-container {
+  display: flex;
+  height: 100px;
+  justify-content: center;
+  align-content: center;
+}
+
+.get-started-section {
+  display: flex;
+}
+
+.get-started {
+  display: flex;
+}
+
+.get-started-header {
+  display: flex;
+}
+
+.last-container {
+  display: flex;
+  justify-content: space-around;
+  align-content: center;
+  flex-direction: row;
+}
+
+.body2 {
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: space-around;
+  width: 100%;
+  padding: 50px;
+}
+
+.create-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.create-image {
+  height: 70px;
+  width: 70px;
+} 
+
+.link-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.link-image {
+  height: 70px;
+  width: 70px;
+}
+
+.start-header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.start-image {
+  height: 70px;
+  width: 70px;
+}
+

@@ -40,7 +40,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         shoppingCart: action.payload
       }
-    case REMOVE_FROM_SHOPPING_CART:
+    case REMOVE_FROM_SHOPPING_CART + FULFILLED:
       let newArray = state.shoppingCart.slice();
       newArray.splice(action.index, 1);
       return {
@@ -50,7 +50,7 @@ export default function reducer(state = initialState, action) {
     case CHECKOUT + FULFILLED:
       return {
         ...state,
-        shoppingCart: action.payload
+        shoppingCart: []
       }
     case MOVE_TO_ORDERS + FULFILLED:
       return {
@@ -63,8 +63,6 @@ export default function reducer(state = initialState, action) {
 }
 
 export function addToShoppingCart(product, price, quantity) {
-  //This currency object will need to have a product, price, quantity? not sure how you want to handle that, user_id
-  //The payload here will need to change to be an axios post to your add function on the backend that will add to session and database. The response should be the entire cart for that user and you will update shopping cart on redux state with that response
   let added = axios.post(`/api/cart`, { product, price, quantity }).then(results => {
     return results.data
   })
@@ -74,15 +72,17 @@ export function addToShoppingCart(product, price, quantity) {
   }
 }
 
-export function removeFromShoppingCart(currencyIndex) {
+export function removeFromShoppingCart(id) {
+  let cart = axios.delete(`/api/cart/${id}`).then(results => {
+    return results.data
+  })
   return {
     type: REMOVE_FROM_SHOPPING_CART,
-    payload: currencyIndex
+    payload: cart
   }
 }
 
 export function updateQuantity(id, quantity) {
-  console.log(id, quantity)
   let cart = axios.put(`/api/cart/${id}?quantity=${quantity}`).then(results => {
     return results.data
   })

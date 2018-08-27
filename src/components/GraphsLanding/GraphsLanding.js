@@ -240,7 +240,7 @@ class GraphsLanding extends Component {
             <p> <NumberFormat value={this.state.ethereum.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
             <p> <NumberFormat value={this.state.ethereum.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-ethereum-button" onClick={() => {
-              this.props.addToShoppingCart( 'Ethereum',  this.state.ethereum.quotes.USD.price, 3);
+              this.props.addToShoppingCart( 'Ethereum',  this.state.ethereum.quotes.USD.price, 1);
               this.successfullAdd('Ethereum')
             }}>Buy Ethereum</button>
             <Line
@@ -259,7 +259,7 @@ class GraphsLanding extends Component {
             <p> <NumberFormat value={this.state.litecoin.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
             <p> <NumberFormat value={this.state.litecoin.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-litecoin-button" onClick={() => {
-              this.props.addToShoppingCart( 'Litecoin', this.state.litecoin.quotes.USD.price, 2);
+              this.props.addToShoppingCart( 'Litecoin', this.state.litecoin.quotes.USD.price, 1);
               this.successfullAdd('Litecoin')
             }}>Buy Litecoin</button>
             <Line
@@ -280,7 +280,6 @@ class GraphsLanding extends Component {
 }
 
 let mapStateToProps = state => {
-  console.log(state)
   return {
     user: state.user.user,
     currency: state.currencyCart.currency
