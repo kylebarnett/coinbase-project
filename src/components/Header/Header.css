@@ -35,7 +35,7 @@
   width: auto;
   width: 25%;
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .login-button {
@@ -48,18 +48,18 @@
   margin-top: 100px;
 }
 
+/* .dropdown {
+  position: relative;
+  display: flex;
+  height: 10px;
+} */
+
 .dropbtn {
   background-color: transparent;
   color: white;
   font-size: 26px;
   border: none;
 }
-
-/* .dropdown {
-  position: relative;
-  display: flex;
-  height: 10px;
-} */
 
 .dropdown-content {
   display: none;
@@ -82,6 +82,13 @@
 .dropdown:hover .dropdown-content {display: block;}
 
 .dropdown:hover .dropbtn {background-color: none; top: 0}
+
+.login {
+  display: flex;
+  justify-content: space-around;
+  flex-direction: row;
+  margin-right: 10px;
+}
 
 .login-button {
   cursor: pointer;

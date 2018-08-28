@@ -7,7 +7,7 @@ import { getUser } from '../../redux/reducers/user'
 import { addToShoppingCart } from '../../redux/reducers/currencyCart'
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, ToastStore } from 'react-toasts';
 const NumberFormat = require('react-number-format');
 
 let bitcoinData = [7321.04, 7370.78, 7466.86, 7354.13, 7419.29, 7418.49, 7711.11, 8424.27, 8181.39, 7951.58, 8165.01, 8192.15, 8218.46, 8180.48, 7780.44, 7624.91, 7567.15, 7434.39, 7032.85, 7068.48, 6951.80, 6753.12, 6305.80, 6568.23, 6184.71, 6295.73, 6322.69, 6297.57, 6199.71, 6308.52]
@@ -188,21 +188,21 @@ class GraphsLanding extends Component {
 
   successfullAdd = (name) => {
     if (this.props.addToShoppingCart) {
-      toast.success('Successfully Added ' + name + ' to Shopping Cart')
+      ToastStore.success('Successfully Added ' + name + ' to Shopping Cart')
     }
   }
 
   render() {
     return (
       <div>
-
+        <ToastContainer store={ToastStore} position={ToastContainer.POSITION.BOTTOM_RIGHT} />
         <div className="main-coin-box">
           <div className="bitcoin-box">
             <h5 className="bitcoin-name">Bitcoin</h5>
             <p> <NumberFormat value={this.state.bitcoin.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
             <p> <NumberFormat value={this.state.bitcoin.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-bitcoin-button" onClick={() => {
-              this.props.addToShoppingCart( 'Bitcoin', this.state.bitcoin.quotes.USD.price, 1 ); //pass an id through
+              this.props.addToShoppingCart('Bitcoin', this.state.bitcoin.quotes.USD.price, 1);
               this.successfullAdd('Bitcoin')
             }}>Buy Bitcoin</button>
             <Line
@@ -210,8 +210,6 @@ class GraphsLanding extends Component {
                 flex: 1
               }}
               data={data}
-              // width={50}
-              // height={15}
               options={{ legend: false }}
             />
           </div>
@@ -221,7 +219,7 @@ class GraphsLanding extends Component {
             <p> <NumberFormat value={this.state.bitcoinCash.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
             <p> <NumberFormat value={this.state.bitcoinCash.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-bitcoin-cash-button" onClick={() => {
-              this.props.addToShoppingCart( 'Bitcoin-Cash', this.state.bitcoinCash.quotes.USD.price, 1);
+              this.props.addToShoppingCart('Bitcoin-Cash', this.state.bitcoinCash.quotes.USD.price, 1);
               this.successfullAdd('Bitcoin-Cash')
             }}>Buy Bitcoin Cash</button>
             <Line
@@ -229,8 +227,6 @@ class GraphsLanding extends Component {
                 flex: 1
               }}
               data={data2}
-              // width={50}
-              // height={15}
               options={{ legend: false }}
             />
           </div>
@@ -240,7 +236,7 @@ class GraphsLanding extends Component {
             <p> <NumberFormat value={this.state.ethereum.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
             <p> <NumberFormat value={this.state.ethereum.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-ethereum-button" onClick={() => {
-              this.props.addToShoppingCart( 'Ethereum',  this.state.ethereum.quotes.USD.price, 1);
+              this.props.addToShoppingCart('Ethereum', this.state.ethereum.quotes.USD.price, 1);
               this.successfullAdd('Ethereum')
             }}>Buy Ethereum</button>
             <Line
@@ -248,8 +244,6 @@ class GraphsLanding extends Component {
                 flex: 1
               }}
               data={data3}
-              // width={50}
-              // height={15}
               options={{ legend: false }}
             />
           </div>
@@ -259,7 +253,7 @@ class GraphsLanding extends Component {
             <p> <NumberFormat value={this.state.litecoin.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
             <p> <NumberFormat value={this.state.litecoin.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-litecoin-button" onClick={() => {
-              this.props.addToShoppingCart( 'Litecoin', this.state.litecoin.quotes.USD.price, 1);
+              this.props.addToShoppingCart('Litecoin', this.state.litecoin.quotes.USD.price, 1);
               this.successfullAdd('Litecoin')
             }}>Buy Litecoin</button>
             <Line
@@ -267,8 +261,6 @@ class GraphsLanding extends Component {
                 flex: 1
               }}
               data={data4}
-              // width={50}
-              // height={15}
               options={{ legend: false, showLines: true }}
             />
           </div>

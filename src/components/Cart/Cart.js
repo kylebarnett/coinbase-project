@@ -1,18 +1,29 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
-import { removeFromShoppingCart, updateQuantity, checkout } from '../../redux/reducers/currencyCart';
+import { ToastContainer, ToastStore } from 'react-toasts';
+import { removeFromShoppingCart, updateQuantity, checkout, getCartItems } from '../../redux/reducers/currencyCart';
 import './Cart.css'
 
 class Cart extends Component {
 
+  componentDidMount() {
+    this.props.getCartItems()
+  }
+
   updateQuantity = (id, update, quantity) => {
-    if (update === 'up') {
+    if (update === 'More') {
       quantity++
-    } else if (update === 'down') {
+    } else if (update === 'Less') {
       quantity--
     }
     this.props.updateQuantity(id, quantity)
+  }
+
+  successfullRemove = (name) => {
+    if (this.props.removeFromShoppingCart) {
+      ToastStore.success('Successfully Removed ' + name + ' from Shopping Cart')
+    }
   }
   render() {
     let total = 0
@@ -20,11 +31,17 @@ class Cart extends Component {
       total += (element.price * element.quantity)
       return (
         <div>
-          <h2>Coin: {element.product}</h2>
-          <h4>Current Price: ${element.price}</h4>
-          <button onClick={() => this.props.removeFromShoppingCart(element.id)}>Remove</button>
-          <button onClick={() => this.updateQuantity(element.id, 'More', element.quantity)}>+</button>
-          <button onClick={() => this.updateQuantity(element.id, 'Less', element.quantity)}>-</button>
+          <ToastContainer store={ToastStore} position={ToastContainer.POSITION.TOP_RIGHT} />
+          <div className="cart-main-container">
+            <h2>Coin: {element.product}</h2>
+            <h4>Current Price: ${element.price}</h4>
+            <p>Quantity: {element.quantity}</p>
+            <button onClick={() => {
+              this.props.removeFromShoppingCart(element.id); this.successfullRemove(element.product)
+            }}>Remove</button>
+            <button onClick={() => this.updateQuantity(element.id, 'More', element.quantity)}>+</button>
+            <button onClick={() => this.updateQuantity(element.id, 'Less', element.quantity)}>-</button>
+          </div>
         </div>
       )
     })
@@ -33,7 +50,7 @@ class Cart extends Component {
         {coinCartDisplay[0] ? coinCartDisplay : <h1>Go buy some cryptos</h1>}
         <p>Total Purchase: ${total}</p>
         <button onClick={this.props.checkout}>Checkout</button>
-        {/* When you click checkout-> redirected to stripe */}
+        <a href="/" >Go home</a>
       </div>
     );
   }
@@ -45,4 +62,4 @@ let mapStateToProps = state => {
   }
 }
 
-export default connect(mapStateToProps, { removeFromShoppingCart, updateQuantity, checkout })(Cart);
+export default connect(mapStateToProps, { removeFromShoppingCart, updateQuantity, checkout, getCartItems })(Cart);

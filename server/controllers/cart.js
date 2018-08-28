@@ -5,33 +5,30 @@ module.exports = {
     db.readCart(id).then(response => {
       res.status(200).send(response)
     })
-    // res.status(200).send(req.session.user.cart)
+  },
+
+  items: (req, res) => {
+    let db = req.app.get('db')
+    db.getCartItems().then(response => {
+      res.status(200).send(response)
+    })
   },
 
   add: (req, res) => {
-
-    // if (!req.session.cart) {
     let { product, price, quantity } = req.body
     let { id } = req.session.user
     let db = req.app.get('db');
-    //You will also have to insert into the cart table the product and quantity.
-    //You need to decide where logic will occur to see if the user already has that product in their cart
     db.addToCart([product, price, quantity, id]).then(response => {
       res.status(200).send(response)
     })
-    // }
   },
-
-  // req.session.user.cart.push(item)
-  // res.status(200).send(req.session.user.cart)
 
 
   update: (req, res) => {
-    //id should reference the user id
-    let { id } = req.session.user
+    let { id } = req.params
     let { quantity } = req.query
     let db = req.app.get('db')
-    db.updateQuantity([+quantity, id]).then(response => {
+    db.updateQuantity([+quantity, id, req.session.user.id]).then(response => {
       res.status(200).send(response)
     })
   },
@@ -39,7 +36,7 @@ module.exports = {
   remove: (req, res) => {
     let { id } = req.params
     let db = req.app.get('db')
-    db.removeFromCart([id]).then(response => {
+    db.removeFromCart([id, req.session.user.id]).then(response => {
       res.status(200).send(response)
     })
   },

@@ -9,6 +9,7 @@ const FULFILLED = '_FULFILLED'
 const GET_ALL_CURRENCIES = 'GET_ALL_CURRENCIES'
 const GET_ALL_CURRENCIES_PENDING = 'GET_ALL_CURRENCIES_PENDING'
 const GET_ALL_CURRENCIES_FULFILLED = 'GET_ALL_CURRENCIES_FULFILLED'
+const GET_CART_ITEMS = 'GET_CART_ITEMS'
 const ADD_TO_SHOPPING_CART = 'ADD_TO_SHOPPING_CART'
 const UPDATE_QUANTITY = 'UPDATE_QUANTITY'
 const REMOVE_FROM_SHOPPING_CART = 'REMOVE_FROM_SHOPPING_CART'
@@ -29,6 +30,11 @@ export default function reducer(state = initialState, action) {
         ...state,
         loading: false,
         currency: action.payload
+      }
+    case GET_CART_ITEMS + FULFILLED:
+      return {
+        ...state,
+        shoppingCart: action.payload
       }
     case ADD_TO_SHOPPING_CART + FULFILLED:
       return {
@@ -59,6 +65,16 @@ export default function reducer(state = initialState, action) {
       }
     default:
       return state
+  }
+}
+
+export function getCartItems(){
+  let cart = axios.get('/api/cart').then(results => {
+    return results.data
+  })
+  return {
+    type: GET_CART_ITEMS,
+    payload: cart
   }
 }
 

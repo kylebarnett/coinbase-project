@@ -20,8 +20,6 @@ app.use(session({
     resave: false
 }))
 app.use(bodyParser.json());
-// app.use(checkForLogin);
-
 
 app.get('/auth/callback', AuthCtrl.auth)
 app.get('/api/currentUser', (req, res) => {
@@ -40,6 +38,7 @@ app.get('/api/logout', (req, res) => {
 
 //cart
 
+app.get('/api/cart', cart.items)
 app.post('/api/cart', cart.add)
 app.delete('/api/cart/:id', cart.remove)
 app.put('/api/cart/:id', cart.update)
