@@ -1,9 +1,49 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import StripeCheckout from 'react-stripe-checkout';
+import axios from 'axios';
 import { ToastContainer, ToastStore } from 'react-toasts';
 import { removeFromShoppingCart, updateQuantity, checkout, getCartItems } from '../../redux/reducers/currencyCart';
+import PAYMENT_SERVER_URL from './server';
 import './Cart.css'
+
+
+const CURRENCY = 'USD';
+
+const fromUSDToCent = amount => amount * 100
+
+const successPayment = data => {
+  alert('Payment Successful')
+}
+
+const errorPayment = data => {
+  alert('Payment Error')
+}
+
+const onToken = (amount, description) => token =>
+  axios.post(PAYMENT_SERVER_URL,
+    {
+      description,
+      source: token.id,
+      currency: CURRENCY,
+      amount: fromUSDToCent(amount)
+    })
+    .then(() => {
+      successPayment()
+      this.props.checkout()
+    })
+    .catch(errorPayment)
+
+const Checkout = ({ name, description, amount }) =>
+    <StripeCheckout
+      name={name}
+      description={description}
+      amount={fromUSDToCent(amount)}
+      token={onToken(amount, description)}
+      currency={CURRENCY}
+      stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE}
+    />
 
 class Cart extends Component {
 
@@ -47,9 +87,10 @@ class Cart extends Component {
     })
     return (
       <div>
+        
         {coinCartDisplay[0] ? coinCartDisplay : <h1>Go buy some cryptos</h1>}
         <p>Total Purchase: ${total}</p>
-        <button onClick={this.props.checkout}>Checkout</button>
+        {Checkout({name: "Coinbase", description: "A marketplace for cryptos.", amount: {total}})}
         <a href="/" >Go home</a>
       </div>
     );
