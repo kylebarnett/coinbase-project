@@ -20,6 +20,7 @@ app.use(session({
     resave: false
 }))
 app.use(bodyParser.json());
+app.use( express.static( `${__dirname}/../build` ) );
 
 app.get('/auth/callback', AuthCtrl.auth)
 app.get('/api/currentUser', (req, res) => {
