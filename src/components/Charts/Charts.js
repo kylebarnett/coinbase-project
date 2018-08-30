@@ -31,7 +31,7 @@ const data2 = {
     {
       backgroundColor: 'rgba(226, 239, 211)',
       borderColor: 'rgba(141, 196, 81)',
-      data: bitcoinCashData
+      data: bitcoinCashData,
     }
   ]
 }
@@ -67,39 +67,41 @@ class Charts extends Component {
   render() {
     return (
       <div>
-        <div className="main-header">
-          <div className="main-header-navbar">
-            <div className="coinbase-logo">
+        <div className="chart-main-header">
+          <div className="chart-main-header-navbar">
+            <div className="chart-coinbase-logo">
               <Link to="/"><h4 style={{ textDecoration: 'none', color: 'white' }}>Coinbase</h4></Link>
             </div>
-            <div className="product-button">
-              Products
+            <div className="chart-buttons">
+              <div className="product-button">
+                Products
           </div>
-          <div className="help-button">
-              Help
+              <div className="help-button">
+                Help
           </div>
-            <div className="chart-button">
-              <Link to="/charts">Charts</Link>
+              <div className="chart-button">
+                <Link to="/charts">Charts</Link>
+              </div>
             </div>
           </div>
         </div>
         <div className="all-charts">
-        <Line
-          data={data}
-          options={{ legend: false, title: { display: true, text: 'Bitcoin'} }}
-        />
-        <Line
-          data={data2}
-          options={{ legend: false, title: { display: true, text: 'Bitcoin-Cash'} }}
-        />
-        <Line
-          data={data3}
-          options={{ legend: false, title: { display: true, text: 'Ethereum'} }}
-        />
-        <Line
-          data={data4}
-          options={{ legend: false, title: { display: true, text: 'Litecoin'} }}
-        />
+          <Line
+            data={data}
+            options={{ legend: false, title: { display: true, text: 'Bitcoin' }, scales: { xAxes: [{ gridLines: {display: false}}], yAxes: [{ gridLines: { display: false}}]} }}
+          />
+          <Line
+            data={data2}
+            options={{ legend: false, title: { display: true, text: 'Bitcoin-Cash' }, scales: { xAxes: [{ gridLines: {display: false}}], yAxes: [{ gridLines: { display: false}}]} }}
+          />
+          <Line
+            data={data3}
+            options={{ legend: false, title: { display: true, text: 'Ethereum' }, scales: { xAxes: [{ gridLines: {display: false}}], yAxes: [{ gridLines: { display: false}}]} }}
+          />
+          <Line
+            data={data4}
+            options={{ legend: false, title: { display: true, text: 'Litecoin' }, scales: { xAxes: [{ gridLines: {display: false}}], yAxes: [{ gridLines: { display: false}}]} }}
+          />
         </div>
       </div>
     )

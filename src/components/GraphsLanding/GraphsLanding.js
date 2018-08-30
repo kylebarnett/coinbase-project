@@ -155,7 +155,6 @@ class GraphsLanding extends Component {
   }
 
   bitcoinMouseEnter = (e) => {
-    // console.log(e.target.classList)
     e.target.classList.toggle('fas')
   }
 
@@ -198,9 +197,9 @@ class GraphsLanding extends Component {
         <ToastContainer store={ToastStore} position={ToastContainer.POSITION.BOTTOM_RIGHT} />
         <div className="main-coin-box">
           <div className="bitcoin-box">
-            <h5 className="bitcoin-name">Bitcoin</h5>
-            <p> <NumberFormat value={this.state.bitcoin.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
-            <p> <NumberFormat value={this.state.bitcoin.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
+            <h3 className="bitcoin-name"><img style={{ height: '25px', width: '25px'}}src="https://thumbs.dreamstime.com/b/bitcoin-logo-white-background-bitcoin-logo-white-background-orange-circle-white-bitcoin-symbol-tilted-117680414.jpg" alt="" />Bitcoin</h3>
+            <p className="bitcoin-price"> <NumberFormat value={this.state.bitcoin.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
+            <p className="bitcoin-change"> <NumberFormat value={this.state.bitcoin.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-bitcoin-button" onClick={() => {
               this.props.addToShoppingCart('Bitcoin', this.state.bitcoin.quotes.USD.price, 1);
               this.successfullAdd('Bitcoin')
@@ -210,14 +209,14 @@ class GraphsLanding extends Component {
                 flex: 1
               }}
               data={data}
-              options={{ legend: false }}
+              options={{ legend: false, scales: { xAxes: [{ gridLines: {display: false, drawBorder: false}}], yAxes: [{ ticks: {display: false}, gridLines: { display: false, drawBorder: false}}]} }}
             />
           </div>
 
           <div className="bitcoin-cash-box">
-            <h5 className="bitcoin-cash-name">Bitcoin Cash</h5>
-            <p> <NumberFormat value={this.state.bitcoinCash.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
-            <p> <NumberFormat value={this.state.bitcoinCash.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
+            <h3 className="bitcoin-cash-name"><img style={{height: '25px', width: '25px'}}src="http://icons.iconarchive.com/icons/cjdowner/cryptocurrency-flat/1024/Bitcoin-Cash-BCH-icon.png" alt=""/>Bitcoin Cash</h3>
+            <p className="bitcoin-cash-price"> <NumberFormat value={this.state.bitcoinCash.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
+            <p className="bitcoin-cash-change"> <NumberFormat value={this.state.bitcoinCash.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-bitcoin-cash-button" onClick={() => {
               this.props.addToShoppingCart('Bitcoin-Cash', this.state.bitcoinCash.quotes.USD.price, 1);
               this.successfullAdd('Bitcoin-Cash')
@@ -227,14 +226,14 @@ class GraphsLanding extends Component {
                 flex: 1
               }}
               data={data2}
-              options={{ legend: false }}
+              options={{ legend: false, scales: { xAxes: [{ gridLines: {display: false, drawBorder: false}}], yAxes: [{ ticks: {display: false}, gridLines: { display: false, drawBorder: false}}]} }}
             />
           </div>
 
           <div className="ethereum-box">
-            <h5 className="ethereum-name">Ethereum</h5>
-            <p> <NumberFormat value={this.state.ethereum.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
-            <p> <NumberFormat value={this.state.ethereum.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
+            <h3 className="ethereum-name"><img style={{height: '25px', width: '25px'}}src="https://png.icons8.com/color/1600/ethereum.png" alt=""/>Ethereum</h3>
+            <p className="ethereum-price"> <NumberFormat value={this.state.ethereum.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
+            <p className="ethereum-change"> <NumberFormat value={this.state.ethereum.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-ethereum-button" onClick={() => {
               this.props.addToShoppingCart('Ethereum', this.state.ethereum.quotes.USD.price, 1);
               this.successfullAdd('Ethereum')
@@ -244,14 +243,14 @@ class GraphsLanding extends Component {
                 flex: 1
               }}
               data={data3}
-              options={{ legend: false }}
+              options={{ legend: false, scales: { xAxes: [{ gridLines: {display: false, drawBorder: false}}], yAxes: [{ ticks: {display: false}, gridLines: { display: false, drawBorder: false}}]} }}
             />
           </div>
 
           <div className="litecoin-box">
-            <h5 className="litecoin-name">Litecoin</h5>
-            <p> <NumberFormat value={this.state.litecoin.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
-            <p> <NumberFormat value={this.state.litecoin.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
+            <h3 className="litecoin-name"><img style={{height: '25px', width: '25px'}}src="https://cdn.worldvectorlogo.com/logos/litecoin.svg" alt=""/>Litecoin</h3>
+            <p className="litecoin-price"> <NumberFormat value={this.state.litecoin.quotes.USD.price} displayType={'text'} thousandSeparator={true} prefix={'$'} decimalScale={2} /></p>
+            <p className="litecoin-change"> <NumberFormat value={this.state.litecoin.quotes.USD.percent_change_24h} displayType={'text'} suffix={'%'} /></p>
             <button className="buy-litecoin-button" onClick={() => {
               this.props.addToShoppingCart('Litecoin', this.state.litecoin.quotes.USD.price, 1);
               this.successfullAdd('Litecoin')
@@ -261,7 +260,7 @@ class GraphsLanding extends Component {
                 flex: 1
               }}
               data={data4}
-              options={{ legend: false, showLines: true }}
+              options={{ legend: false, scales: { xAxes: [{ gridLines: {display: false, drawBorder: false}}], yAxes: [{ ticks: {display: false}, gridLines: { display: false, drawBorder: false}}]} }}
             />
           </div>
         </div>

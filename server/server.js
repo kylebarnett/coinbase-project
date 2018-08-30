@@ -1,3 +1,4 @@
+require('dotenv').config()
 const express = require('express');
 const bodyParser = require('body-parser');
 const session = require('express-session');
@@ -6,7 +7,6 @@ const controller = require('./controllers/controller');
 const AuthCtrl = require('./controllers/AuthCtrl');
 const checkForLogin = require('./middleware/checkForLogin');
 const cart = require('./controllers/cart');
-require('dotenv').config()
 
 const app = express()
 
@@ -43,7 +43,7 @@ app.post('/api/cart', cart.add)
 app.delete('/api/cart/:id', cart.remove)
 app.put('/api/cart/:id', cart.update)
 app.get('/api/cart', cart.getAll)
-app.delete('/api/checkout', cart.checkout)
+app.post('/api/checkout', cart.checkout)
 
 
 const port = 7777

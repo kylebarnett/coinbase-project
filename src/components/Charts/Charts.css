@@ -1,18 +1,18 @@
-.main-header {
-  height: 500px;
+.chart-main-header {
+  height: 50px;
   width: 100%;
   background-color: rgb(15, 98, 189);
   display: flex;
-  justify-content: space-between;
+  flex-direction: column;
 }
 
-.main-header-navbar {
+.chart-main-header-navbar {
   height: 20%;
   display: flex;
   justify-content: space-between;
 }
 
-.coinbase-logo {
+.chart-coinbase-logo {
   height: 10%;
   width: 20%;
   font-size: 26px;
@@ -20,6 +20,18 @@
   justify-content: center;
   align-items: center;
   margin-top: 10px;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.chart-buttons {
+  font-size: 26px;
+  font-family: sans-serif;
+  width: auto;
+  width: 25%;
+  display: flex;
+  justify-content: space-between;
+  color: white;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .all-charts {

@@ -1,3 +1,5 @@
+// require('dotenv').config()
+const stripe = require('stripe')(process.env.REACT_APP_STRIPE_SECRET_KEY)
 module.exports = {
   getAll: (req, res) => {
     let { id } = req.session.user
@@ -43,6 +45,7 @@ module.exports = {
 
   checkout: (req, res) => {
     let db = req.app.get('db')
+    stripe.charges.create(req.body)
     let promises = []
     db.checkout(req.session.user.id).then(response => {
       for (let i = 0; i < response.length; i++) {
@@ -51,16 +54,10 @@ module.exports = {
         }))
       }
       Promise.all(promises).then(() => {
-        res.status(200)
+        res.sendStatus(200)
       })
     })
   },
-
-  // select * from cart where user_id = whatever
-  // that gives you back an array
-  // go through array and get back final values for each coin
-  // loop through this array.. for each coin call db file to create order record 
-
 
   orders: (req, res) => {
     let db = req.app.get('db')

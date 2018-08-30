@@ -6,7 +6,7 @@ class LandingPage2 extends Component {
   render() {
     return (
       <div>
-        <div className="main-container">
+        <div className="main-container-2">
           <div className="header-container2">
             <div className="header">
               <h1 className="header-text">The most trusted digital currency platform</h1>

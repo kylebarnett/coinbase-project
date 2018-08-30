@@ -2,83 +2,111 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 80px;
 }
 
 .create-header {
-  color: rgb(36, 49, 66)
+  color: rgb(36, 49, 66);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .create-paragraph {
   color: lightslategray;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .features-container {
   display: flex;
   flex-direction: row;
+  margin-left: 35px;
 }
 
 .four-features {
   display: flex;
   flex-direction: column;
   justify-content: space-around;
-  width: 45%
+  width: 45%;
 }
 
 .manage-your-portfolio-header {
-  color: rgb(36, 49, 66)
+  color: rgb(36, 49, 66);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .manage-image {
   height: 32px;
   width: 32px;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: gainsboro;
+  border-width: 1px
 }
 
 .manage-your-porfolio-paragraph {
   color: lightslategray;
   margin-left: 33px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .recurring-buys-header {
-  color: rgb(36, 49, 66)
+  color: rgb(36, 49, 66);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .recurring-image {
   height: 32px;
   width: 32px;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: gainsboro;
+  border-width: 1px
 }
 
 .recurring-buys-paragraph {
   color: lightslategray;
   margin-left: 33px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .vault-protection-header {
-  color: rgb(36, 49, 66)
+  color: rgb(36, 49, 66);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .vault-image {
   height: 32px;
-  width: 32px
+  width: 32px;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: gainsboro;
+  border-width: 1px
 }
 
 .vault-protection-paragraph {
   color: lightslategray;
   margin-left: 33px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mobile-apps-header {
-  color: rgb(36, 49, 66)
+  color: rgb(36, 49, 66);
+  font-family: 'Montserrat', sans-serif;
 }
 
 .mobile-image {
   height: 32px;
   width: 32px;
+  border-style: solid;
+  border-radius: 100%;
+  border-color: gainsboro;
+  border-width: 1px
 }
 
 .mobile-apps-paragraph {
   color: lightslategray;
   margin-left: 33px;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* .manage-your-porfolio-paragraph {
@@ -87,11 +115,12 @@
 
 .coinbase-product {
   display: flex;
+  justify-content: space-around;
 }
 
 .landing-picture {
-  height: 400px;
-  width: 450px;
+  height: 100%;
+  width: 80%;
 }
 
 .bottom-border {

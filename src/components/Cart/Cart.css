@@ -1,0 +1,83 @@
+.cart-main-container {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.cart-coin {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(15, 98, 189)
+}
+
+.cart-price {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cart-quantity {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cart-buttons {
+  display: flex;
+  flex-direction: row;
+}
+
+.cart-remove {
+  display: flex;
+  height: 25px;
+  width: 50%;
+  border-radius: 4;
+  justify-content: center;
+  align-content: center;
+  text-align: center; 
+  font-family: 'Montserrat', sans-serif;
+}
+
+.cart-plus {
+  display: flex;
+  height: 25px;
+  width: 10%;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.cart-minus {
+  display: flex;
+  height: 25px;
+  width: 10%;
+  justify-content: center;
+  align-content: center;
+  text-align: center;
+}
+
+.cart-total-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.cart-coinbase {
+  display: flex;
+  justify-content: center;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(15, 98, 189);
+}
+
+.cart-buy {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
+  color: rgb(15, 98, 189)
+}

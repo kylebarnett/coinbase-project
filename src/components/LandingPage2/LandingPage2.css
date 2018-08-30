@@ -1,5 +1,7 @@
-.main-container {
+.main-container-2 {
   display: flex;
+  flex-direction: column;
+  align-content: center;
 }
 
 .header-container2 {
@@ -9,12 +11,15 @@
 }
 
 .header-text {
-  color: rgb(36, 49, 66)
+  color: rgb(36, 49, 66);
+  text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .header-paragraph {
   color: lightslategray;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Most Trusted Digital Currency Platform Container */
@@ -54,11 +59,13 @@
 
 .safe-header {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .safe-paragraph {
   text-align: center;
   color: lightslategray;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .insurance {
@@ -80,11 +87,13 @@
 
 .insurance-header {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .insurance-paragraph {
   text-align: center;
   color: lightslategray;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .shield {
@@ -106,11 +115,13 @@
 
 .shield-header {
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .shield-paragraph {
   text-align: center;
   color: lightslategray;
+  font-family: 'Montserrat', sans-serif;
 }
 
 
@@ -140,11 +151,13 @@
   color: white;
   font-size: 45px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .dollar-paragraph {
   color: rgb(154, 185, 221);
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .countries-section {
@@ -161,11 +174,13 @@
   color: white;
   font-size: 45px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .countries-paragraph {
   color: rgb(154, 185, 221);
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .customers-section {
@@ -184,11 +199,13 @@
   color: white;
   font-size: 45px;
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .customers-paragraph {
   color: rgb(154, 185, 221);
   text-align: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 /* Get started */
@@ -210,6 +227,7 @@
 
 .get-started-header {
   display: flex;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .last-container {
@@ -245,6 +263,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .link-image {
@@ -257,6 +276,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .start-image {

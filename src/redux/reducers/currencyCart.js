@@ -53,7 +53,7 @@ export default function reducer(state = initialState, action) {
         ...state,
         shoppingCart: newArray
       }
-    case CHECKOUT + FULFILLED:
+    case CHECKOUT:
       return {
         ...state,
         shoppingCart: []
@@ -109,12 +109,12 @@ export function updateQuantity(id, quantity) {
 }
 
 export function checkout() {
-  let checkout = axios.delete('/api/checkout').then(results => {
-    return results.data
-  })
+  // let checkout = axios.delete('/api/checkout').then(results => {
+  //   return results.data
+  // })
   return {
     type: CHECKOUT,
-    payload: checkout
+    // payload: checkout
   }
 }
 

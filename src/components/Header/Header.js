@@ -56,17 +56,17 @@ class Header extends Component {
               <Link to="/" style={{ textDecoration: 'none', color: 'white' }}>Coinbase</Link>
             </div>
             <div className="other-buttons">
-              <Link to="/products" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Products</Link>
+              <Link to="/" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Products</Link>
               <Link to="/charts" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Charts</Link>
               <Link to="/cart" style={{ height: '10px', textDecoration: 'none', color: 'white' }}>Cart</Link>
+              <div className="dropdown">
+                <button className="dropbtn">About</button>
+                <div className="dropdown-content">
+                  <a href="#">About Us</a>
+                  <a href="#">Support</a>
+                  <a href="#">Carrers</a>
+                </div>
             </div>
-            <div className="dropdown">
-              <button className="dropbtn">About</button>
-              <div className="dropdown-content">
-                <a href="#">About Us</a>
-                <a href="#">Support</a>
-                <a href="#">Carrers</a>
-              </div>
             </div>
             <div className="login">
               <div className="login-button">
@@ -86,7 +86,7 @@ class Header extends Component {
               <div className="email-input-main">
                 <input className="email-input" type="text" placeholder="Email Address" onChange={(e) => this.handleInputChange(e.target.value)}></input></div>
               <div className="email-main">
-                <button className="email-button" onClick={this.getStarted}>Get Started</button></div>
+                <button className="get-started-button" onClick={this.getStarted}>Get Started</button></div>
             </div>
 
           </div>
