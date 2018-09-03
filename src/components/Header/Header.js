@@ -17,14 +17,10 @@ class Header extends Component {
     }
   }
 
-  // componentDidMount(){
-  //   this.props.getUser()
-  // }
-
   getStarted = () => {
     let { email } = this.state
     axios.post('/api/emails', { email }).then(response => {
-      ToastStore.success('Successfully sent Getting Started Email!')
+      ToastStore.success('Successfully sent email!')
       this.setState({
         email: response.data
       })
@@ -35,7 +31,7 @@ class Header extends Component {
     let auth0domain = `https://${process.env.REACT_APP_AUTH0_DOMAIN}`
     let clientId = process.env.REACT_APP_AUTH0_CLIENT_ID
     let scope = encodeURIComponent('openid profile email')
-    let redirectUri = encodeURIComponent(`${window.location.origin}/auth/callback`) //callback?redirect=bitcoin
+    let redirectUri = encodeURIComponent(`${window.location.origin}/auth/callback`)
     let location = `${auth0domain}/authorize?client_id=${clientId}&scope=${scope}&redirect_uri=${redirectUri}&response_type=code`
 
     window.location = location
@@ -46,10 +42,16 @@ class Header extends Component {
       email: event
     })
   }
+
+  clearInputField = () => {
+    this.setState({
+      email: ''
+    })
+  }
   render() {
     return (
       <div>
-        <ToastContainer store={ToastStore} position={ToastContainer.POSITION.BOTTOM_RIGHT}/>
+        <ToastContainer store={ToastStore} position={ToastContainer.POSITION.TOP_RIGHT} lightBackground />
         <div className="main-header">
           <div className="main-header-navbar">
             <div className="coinbase-logo">
@@ -66,7 +68,7 @@ class Header extends Component {
                   <a href="#">Support</a>
                   <a href="#">Carrers</a>
                 </div>
-            </div>
+              </div>
             </div>
             <div className="login">
               <div className="login-button">
@@ -84,9 +86,11 @@ class Header extends Component {
             </div>
             <div className="email-input-container">
               <div className="email-input-main">
-                <input className="email-input" type="text" placeholder="Email Address" onChange={(e) => this.handleInputChange(e.target.value)}></input></div>
+                <input className="email-input" style={{ fontSize: '15px' }} type="text" placeholder="Email Address" onChange={(e) => this.handleInputChange(e.target.value)}></input>
+              </div>
               <div className="email-main">
-                <button className="get-started-button" onClick={this.getStarted}>Get Started</button></div>
+                <button style={{ fontSize: '15px' }} className="get-started-button" onClick={this.getStarted}>Get Started</button>
+              </div>
             </div>
 
           </div>
@@ -103,5 +107,3 @@ let mapStateToProps = state => {
 }
 
 export default connect(mapStateToProps, { logout, getUser })(Header)
-
-{/* <a href={null} onClick={this.login}>login</a>} */ }

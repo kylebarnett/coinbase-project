@@ -5,7 +5,6 @@
   align-items: center;
 }
 
-
 .cart-coin {
   display: flex;
   justify-content: center;
@@ -34,29 +33,34 @@
   display: flex;
   height: 25px;
   width: 50%;
-  border-radius: 4;
+  border-radius: 4px;
   justify-content: center;
   align-content: center;
   text-align: center; 
   font-family: 'Montserrat', sans-serif;
+  cursor: pointer;
 }
 
 .cart-plus {
   display: flex;
   height: 25px;
   width: 10%;
+  border-radius: 4px;
   justify-content: center;
   align-content: center;
   text-align: center;
+  cursor: pointer;
 }
 
 .cart-minus {
   display: flex;
   height: 25px;
   width: 10%;
+  border-radius: 4px;
   justify-content: center;
   align-content: center;
   text-align: center;
+  cursor: pointer;
 }
 
 .cart-total-container {
@@ -74,10 +78,18 @@
   color: rgb(15, 98, 189);
 }
 
+.cart-coinbase:visited {
+  color: rgb(15, 98, 189);
+}
+
 .cart-buy {
   display: flex;
   justify-content: center;
   text-align: center;
   font-family: 'Montserrat', sans-serif;
   color: rgb(15, 98, 189)
+}
+
+.cart-total {
+  font-family: 'Montserrat', sans-serif;
 }

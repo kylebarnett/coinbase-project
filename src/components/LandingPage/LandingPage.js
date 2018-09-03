@@ -19,11 +19,13 @@ class LandingPage extends Component {
         <div className="features-container">
           <div className="four-features">
             <div className="manage-your-portfolio-container">
-              <h3 className="manage-your-portfolio-header"><img className="manage-image" src="https://www2.coinbase.com/assets/app-portfolio.png" alt="" />Manage your portfolio</h3>
+              <img className="manage-image" src="https://www2.coinbase.com/assets/app-portfolio.png" alt="" />
+              <h3 className="manage-your-portfolio-header">Manage your portfolio</h3>
               <p className="manage-your-porfolio-paragraph">Buy and sell popular digital currencies, keep track of them in the one place.</p>
             </div>
             <div className="recurring-buys-container">
-              <h3 className="recurring-buys-header"><img className="recurring-image" src="https://www2.coinbase.com/assets/app-recurring.png" alt="" />Recurring buys</h3>
+              <img className="recurring-image" src="https://www2.coinbase.com/assets/app-recurring.png" alt="" />
+              <h3 className="recurring-buys-header">Recurring buys</h3>
               <p className="recurring-buys-paragraph">Invest in digital currency slowly over time by scheduling buys daily, weekly, or monthly.</p>
             </div>
             <div className="vault-protection-container">

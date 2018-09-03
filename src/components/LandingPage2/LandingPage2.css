@@ -166,10 +166,6 @@
   justify-content: center;
 }
 
-/* .countries-stuff {
-  justify-content: center;
-}  */
-
 .countries-header {
   color: white;
   font-size: 45px;
@@ -188,12 +184,6 @@
   width: 250px;
   justify-content: center;
 }
-
-/* .customers-stuff {
-  justify-content: center;
-  align-content: center;
-  text-align: center;
-} */
 
 .customers-header {
   color: white;

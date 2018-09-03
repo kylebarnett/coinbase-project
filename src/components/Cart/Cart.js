@@ -41,6 +41,7 @@ const Checkout = ({ name, description, amount, checkout }) =>
     token={onToken(amount, description, checkout)}
     currency={CURRENCY}
     stripeKey={process.env.REACT_APP_STRIPE_PUBLISHABLE}
+    bitcoin={true}
   />
 
 class Cart extends Component {
@@ -69,7 +70,7 @@ class Cart extends Component {
       total += (element.price * element.quantity)
       return (
         <div>
-          <ToastContainer store={ToastStore} position={ToastContainer.POSITION.TOP_RIGHT} />
+          <ToastContainer store={ToastStore} position={ToastContainer.POSITION.TOP_RIGHT} lightBackground />
           <div className="cart-main-container">
             <h2 className="cart-coin">{element.product}</h2>
             <h4 className="cart-price">Current Price: ${element.price}</h4>
@@ -90,7 +91,7 @@ class Cart extends Component {
         <div className="cart-total-container">
           <h1 className="cart-coinbase"><a style={{ textDecoration: 'none', color: 'rbg(15, 98, 189)' }} href="/">Coinbase</a></h1>
           {coinCartDisplay[0] ? coinCartDisplay : <h1 className="cart-buy">Go buy some cryptos!</h1>}
-          <p>Total Purchase: ${total}</p>
+          <p className="cart-total">Total Purchase: ${total}</p>
           <div className="cart-stripe">
             {Checkout({ name: "Coinbase", description: "A marketplace for cryptos.", amount: total, checkout: this.props.checkout })}
           </div>
