@@ -80,16 +80,6 @@ module.exports = {
   //   res.status(200).send(req.session.user)
   // }
 
-
-
-
-
-
-
-
-
-
-
 // if(req.session.cart){
 //   const { id } = req.query
 //   const { cart } = req.session.user

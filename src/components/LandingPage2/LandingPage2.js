@@ -56,7 +56,7 @@ class LandingPage2 extends Component {
         <div className="get-started-container">
           <div className="get-started-section">
             <div className="get-started">
-              <h2 className="get-started-header">Get started in a few minutes</h2>
+              <h1 className="get-started-header">Get started in a few minutes</h1>
             </div>
           </div>
         </div>
