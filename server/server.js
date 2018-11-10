@@ -40,6 +40,15 @@ app.get('/api/logout', (req, res) => {
 //cart
 
 app.get('/api/cart', cart.items)
+// app.get('api/cart', function(req, res, next){
+//   req.query.coins
+//   if(req.query.bitcoin){
+//     var results = results.filter(function(e){
+//       return e.bitcoin === req.query.bitcoin
+//     })
+//   }
+//   res.send(results)
+// })
 app.post('/api/cart', cart.add)
 app.delete('/api/cart/:id', cart.remove)
 app.put('/api/cart/:id', cart.update)
@@ -50,4 +59,4 @@ app.post('/api/checkout', cart.checkout)
 const port = 7777
 app.listen(port, () => {
   console.log('This is going to be big', port)
-})
+}) 
